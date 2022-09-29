@@ -36,7 +36,7 @@ gallery.addEventListener('click', (event) => {
     if (event.target.nodeName === "IMG") {
         const modal = basicLightbox.create(`
     <div class="modal">
-        <img class="gallery__image"/>
+        <img/>
     </div>`)
 
         modal.show()
