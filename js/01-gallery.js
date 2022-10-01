@@ -32,16 +32,21 @@ gallery.addEventListener('click', (event) => {
     if (event.target.nodeName === "IMG") {
         const modal = basicLightbox.create(`
     <div class="modal">
-        <img class="gallery__image"/>
+        <img src="${event.target.dataset.source}">
     </div>`)
 
         modal.show()
-        
-        
-        const imageInModal = document.querySelector('.modal').firstElementChild
-        imageInModal.setAttribute('src', event.target.dataset.source)
-        
-        
+
+        document.addEventListener('keyup', (event) => {
+            if (event.key === "Escape") {
+                modal.close()
+                
+            }
+
+        })
+
+
+
     }
 
 })
